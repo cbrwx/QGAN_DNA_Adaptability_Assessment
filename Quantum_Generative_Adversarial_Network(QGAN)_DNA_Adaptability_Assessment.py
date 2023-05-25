@@ -103,7 +103,8 @@ def measure_of_adaptability(dna_sequence, environment):
     # of factors to consider with intricate interplay among them. This sample code doesn't 
     # encapsulate the full complexity often found in biological systems. As I am neither a 
     # scientist nor a doctor, it's important to conduct thorough research or seek expert 
-    # advice when trying to accurately model such systems, cbrwx.
+    # advice when trying to accurately model such systems, This attempt is more about 
+    # rising to a challenge(sword in hand) rather than achieving absolute precision, cbrwx.
     return adaptability_score
 
 def custom_cost_function(results, dna_sequence, environment):
