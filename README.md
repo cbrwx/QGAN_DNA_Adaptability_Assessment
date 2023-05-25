@@ -50,8 +50,32 @@ The QGAN is trained using parameter-shift gradient descent, with the gradients c
 
 - The plot_histogram function is used to visualize the final results.
 
+## Generating DNA Sequences
+In addition to assessing the adaptability of DNA sequences, the QGAN architecture implemented in this codebase can also be used to generate DNA sequences. By training the QGAN with a dataset of known DNA sequences, the model learns the distribution of these sequences and is capable of generating new sequences that follow the same distribution.
+
+Here is a broad overview of how you might adapt the code for this purpose:
+
+- Preparation: Start by training the QGAN as usual, but with your dataset of DNA sequences. Ensure that these sequences are properly tokenized and encoded to a format the QGAN can understand.
+
+- Training: During the training process, the QGAN learns the distribution of the DNA sequences. This allows the model to generate sequences that are similar to those in the training set.
+
+- Generation: Once the QGAN has been adequately trained, you can use the generator component to create new sequences. Call the generator function with a random input, then decode the output back into a DNA sequence using the DNATokenizer.
+
+Here's a sample snippet that generates a new sequence:
+
+```
+# Generate a new quantum state
+generated_state = q_generator(random_input)
+
+# Decode the state back into a DNA sequence
+generated_sequence = DNATokenizer.decode(generated_state)
+
+print(f"Generated DNA sequence: {generated_sequence}")
+```
+This code snippet assumes that you've defined random_input appropriately, and that the decode method of your DNATokenizer takes a quantum state as input and produces a DNA sequence.
+
 ## Note
-This code is a proof-of-concept and not intended for actual biological research without significant modifications and validations by experts in the field of genetics and quantum computing.
+This code is a proof-of-concept and not intended for actual biological research without significant modifications and validations by experts in the field of genetics and quantum computing. Also in practice, the generated sequences may not represent biologically valid or meaningful sequences without further constraints or refinements based on biological principles. 
 
 The code doesn't include a process to save the learned QGAN model parameters or the trained model itself. If you want to save the model for future use, you would need to write the parameters to a file after the training loop.
 
